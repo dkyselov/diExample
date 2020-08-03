@@ -1,0 +1,11 @@
+# Project Directories
+dist/
+node_modules/
+
+# Project Artifacts
+.env
+*.zip
+package-lock.json
+
+# IDE
+.idea/

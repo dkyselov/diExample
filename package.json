@@ -1,0 +1,26 @@
+{
+  "name": "di-ts",
+  "description": "Basic DI implementation in TS",
+  "private": true,
+  "author": {
+    "name": "Dmytro Kyselov",
+    "email": "devdmytro@gmail.com"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.14",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.0"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.10",
+    "ts-node": "^3.2.1",
+    "typescript": "^2.4.2"
+  }
+}
