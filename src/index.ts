@@ -4,7 +4,9 @@ import { Injector } from './meta-data/Injector'
 
 import { ProcessController } from './controllers/ProcessController'
 
-export const handler = async(_, context: Context) => {
+import { CloudWatchEvent } from './types/CloudWatchEvent'
+
+export const handler = async(event: CloudWatchEvent, context: Context) => {
   const controller = Injector.resolve<ProcessController>(ProcessController)
-  return controller.runProcess(context)
+  return controller.runProcess(event, context)
 }

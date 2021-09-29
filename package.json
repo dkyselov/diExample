@@ -10,7 +10,8 @@
   "license": "MIT",
   "scripts": {
     "integration": "ts-node test/integration/index.spec.ts",
-    "build": "webpack",
+    "build": "webpack && zip ./dist/index.zip ./dist/index.js",
+    "deploy": "aws lambda update-function-code --function-name testLambda --zip-file fileb://dist/index.zip",
     "audit": "npm audit",
     "commit-audit": "npm audit --production",
     "lint": "tslint -c tslint.json 'src/**/*.ts'"
