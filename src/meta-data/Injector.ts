@@ -1,9 +1,10 @@
-import 'reflect-metadata';
-import { Type } from '../types/Util';
+import 'reflect-metadata'
+import { Type } from '../types/Util'
 
 /**
  * The Injector stores services and resolves requested instances.
  */
+//tslint:disable-next-line:new-parens
 export const Injector = new class {
   /**
    * Resolves instances by injecting required services
@@ -11,10 +12,9 @@ export const Injector = new class {
    * @returns {T}
    */
   resolve<T>(target: Type<any>): T {
-    // tokens are required dependencies, while injections are resolved tokens from the Injector
-    let tokens = Reflect.getMetadata('design:paramtypes', target) || [],
-      injections = tokens.map(token => Injector.resolve<any>(token));
+    let tokens = Reflect.getMetadata('design:paramtypes', target) || []
+    let injections = tokens.map(token => Injector.resolve<any>(token))
 
-    return new target(...injections);
+    return new target(...injections)
   }
-};
+}

@@ -9,18 +9,41 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node ./src/index.ts"
+    "integration": "ts-node test/integration/index.spec.ts",
+    "build": "webpack",
+    "audit": "npm audit",
+    "commit-audit": "npm audit --production",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
+  "dependencies": {
+    "reflect-metadata": "^0.1.10",
+    "ts-node": "^3.2.1",
+    "moment": "^2.29.1",
+    "typescript": "4.4.3"
+  },
+  "pre-commit": [
+    "lint",
+    "commit-audit"
+  ],
   "devDependencies": {
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.43",
     "@types/node": "^8.0.14",
     "chai": "^4.1.2",
-    "mocha": "^3.5.0"
-  },
-  "dependencies": {
-    "reflect-metadata": "^0.1.10",
-    "ts-node": "^3.2.1",
-    "typescript": "^2.4.2"
+    "mocha": "^3.5.0",
+    "@types/aws-lambda": "8.10.50",
+    "@types/aws-sdk": "2.7.0",
+    "@types/dotenv": "8.2.0",
+    "aws-lambda": "1.0.5",
+    "aws-sdk": "2.660.0",
+    "nyc": "15.0.1",
+    "pre-commit": "1.2.2",
+    "nock": "12.0.3",
+    "tslint": "6.1.1",
+    "tslint-config-standard": "9.0.0",
+    "ts-loader": "7.0.1",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "terser-webpack-plugin": "^5.1.2"
   }
 }

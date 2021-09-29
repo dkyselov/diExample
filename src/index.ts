@@ -1,13 +1,10 @@
-import {Injector} from './meta-data/Injector';
-import {ProcessController} from './controllers/ProcessController';
+import { Context } from 'aws-lambda'
 
-const index = async() => {
-    const controller = Injector.resolve<ProcessController>(ProcessController);
-    console.log('controller:', controller);
-    return controller.runProcess();
+import { Injector } from './meta-data/Injector'
+
+import { ProcessController } from './controllers/ProcessController'
+
+export const handler = async(_, context: Context) => {
+  const controller = Injector.resolve<ProcessController>(ProcessController)
+  return controller.runProcess(context)
 }
-
-index()
-.then(() => console.debug('Finish Process'))
-.catch(err => console.error('Some Process Error: ', err))
-

@@ -1,11 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "experimentalDecorators": true ,
+    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "types": [
-      "node", "mocha", "chai"
-    ]
-  }
+    "resolveJsonModule": true,
+    "pretty": true,
+    "sourceMap": true,
+    "target": "es2021",
+    "outDir": "./dist",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": "./src"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "test",
+    "node_modules"
+  ]
 }
