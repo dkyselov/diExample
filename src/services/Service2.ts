@@ -8,7 +8,7 @@ export class Service2 {
   }
 
   getRepo2() {
-    console.debug('Inside Repository2')
+    console.debug('Inside Service2')
     return this.repository2.run()
   }
 }

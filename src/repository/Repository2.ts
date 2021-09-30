@@ -1,6 +1,3 @@
-import { Injectable } from '../decorators/InjectableDecorator'
-
-@Injectable()
 export class Repository2 {
   private static instance: Repository2
   private name
